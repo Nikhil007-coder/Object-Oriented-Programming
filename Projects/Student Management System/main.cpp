@@ -9,7 +9,11 @@
 
 #include<iostream>
 #include<limits>
+#include<string>
+#include<algorithm>
 using namespace std;
+int getValidatedInt();
+string uppercase(string s);
 class Student{
     private:
     string name;
@@ -35,7 +39,11 @@ void Student::addDetails(){
     getline(cin, name);
 
     cout << "Enter roll no: ";
-    cin >> rollno;
+    rollno = getValidatedInt();
+    while (rollno < 0) {
+    cout << "Roll number cannot be negative. Enter again: ";
+    rollno = getValidatedInt();
+}
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -56,10 +64,10 @@ void Student::addDetails(){
 
 void Student::display() {
     cout << "\nStudent Details:\n";
-    cout << "Name: " << name << "\n";
+    cout << "Name: " << uppercase(name) << "\n";
     cout << "Roll No: " << rollno << "\n";
-    cout << "Degree: " << degree << "\n";
-    cout << "Hostel: " << hostel << "\n";
+    cout << "Degree: " << uppercase(degree) << "\n";
+    cout << "Hostel: " << uppercase(hostel) << "\n";
     cout << "CGPA: " << cgpa << "\n";
 }
 void Student::updateDetails() {
@@ -67,11 +75,6 @@ void Student::updateDetails() {
 
     cout << "Enter new name: ";
     getline(cin, name);
-
-    cout << "Enter new roll no: ";
-    cin >> rollno;
-
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Enter new degree: ";
     getline(cin, degree);
@@ -104,6 +107,23 @@ void Student::updateHostel(){
     cout << "Enter new hostel: ";
     getline(cin, hostel);
 }
+int getValidatedInt(){
+    int value;
+    while(true){
+        cin >> value;
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout<<("Invalid Input.Enter an Integer:");
+        }else{
+            return value;
+        }
+    }
+}
+string uppercase(string s) {
+    transform(s.begin(), s.end(), s.begin(), ::toupper);
+    return s;
+}
 int main(){
 const int MAX=100;
 Student students[MAX];
@@ -119,7 +139,7 @@ cout << "Enter appropriate number\n";
         cout<<"\n5 : Display Details.";
         cout<<"\n6 : Quit.";
         cout<<"\nEnter Your Option.";
-        cin>>option;
+        option=getValidatedInt();
         switch(option){
             case 1:{
             if(count<100){
@@ -135,7 +155,11 @@ cout << "Enter appropriate number\n";
             case 2:{
             int rollno;
             cout<<"Enter roll no:";
-            cin>>rollno;
+            rollno = getValidatedInt();
+            while (rollno < 0) {
+            cout << "Roll number cannot be negative. Enter again: ";
+            rollno = getValidatedInt();
+}
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
@@ -153,7 +177,11 @@ cout << "Enter appropriate number\n";
             case 3:{
             int rollno;
             cout<<"Enter roll no:";
-            cin>>rollno;
+            rollno = getValidatedInt();
+            while (rollno < 0) {
+            cout << "Roll number cannot be negative. Enter again: ";
+            rollno = getValidatedInt();
+}
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
@@ -170,7 +198,11 @@ cout << "Enter appropriate number\n";
             case 4:{
             int rollno;
             cout<<"Enter roll no:";
-            cin>>rollno;
+            rollno = getValidatedInt();
+            while (rollno < 0) {
+            cout << "Roll number cannot be negative. Enter again: ";
+            rollno = getValidatedInt();
+}
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
@@ -187,7 +219,11 @@ cout << "Enter appropriate number\n";
             case 5:{
             int rollno;
             cout<<"Enter roll no:";
-            cin>>rollno;
+            rollno = getValidatedInt();
+            while (rollno < 0) {
+            cout << "Roll number cannot be negative. Enter again: ";
+            rollno = getValidatedInt();
+}
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
