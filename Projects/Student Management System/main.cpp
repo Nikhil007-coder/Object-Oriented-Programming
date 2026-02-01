@@ -13,6 +13,8 @@
 #include<algorithm>
 using namespace std;
 int getValidatedInt();
+float getValidatedFloat();
+int getValidatedRollNo();
 string uppercase(string s);
 class Student{
     private:
@@ -38,12 +40,7 @@ void Student::addDetails(){
     cout << "Enter name: ";
     getline(cin, name);
 
-    cout << "Enter roll no: ";
-    rollno = getValidatedInt();
-    while (rollno < 0) {
-    cout << "Roll number cannot be negative. Enter again: ";
-    rollno = getValidatedInt();
-}
+    rollno = getValidatedRollNo();
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -54,11 +51,11 @@ void Student::addDetails(){
     getline(cin, hostel);
 
     cout << "Enter CGPA: ";
-    cin >> cgpa;
+    cgpa=getValidatedFloat();
 
     while (cgpa < 0 || cgpa > 10) {
         cout << "Invalid CGPA. Enter again: ";
-        cin >> cgpa;
+        cgpa = getValidatedFloat();
     }
 }
 
@@ -83,11 +80,11 @@ void Student::updateDetails() {
     getline(cin, hostel);
 
     cout << "Enter new CGPA: ";
-    cin >> cgpa;
+    cgpa=getValidatedFloat();
 
     while (cgpa < 0 || cgpa > 10) {
         cout << "Invalid CGPA. Enter again: ";
-        cin >> cgpa;
+        cgpa = getValidatedFloat();
     }
 
     cout << "Details updated successfully!\n";
@@ -95,11 +92,11 @@ void Student::updateDetails() {
 
 void Student::updateCGPA(){
     cout<<"Enter new CGPA:";
-    cin>>cgpa;
+    cgpa=getValidatedFloat();
 
     while (cgpa < 0 || cgpa > 10) {
     cout << "Invalid CGPA. Enter again: ";
-    cin >> cgpa;
+    cgpa = getValidatedFloat();
     }
 }
 void Student::updateHostel(){
@@ -120,10 +117,37 @@ int getValidatedInt(){
         }
     }
 }
+int getValidatedRollNo() {
+    int rollno;
+    cout << "Enter roll no: ";
+    rollno = getValidatedInt();
+
+    while (rollno < 0) {
+        cout << "Roll number cannot be negative. Enter again: ";
+        rollno = getValidatedInt();
+    }
+
+    return rollno;
+}
+float getValidatedFloat(){
+    float value;
+    while(true){
+        cin >> value;
+        if (cin.fail()){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout<<("Invalid Input.Enter a Integer/Decimal No:");
+        }else{
+            return value;
+        }
+    }
+}
 string uppercase(string s) {
     transform(s.begin(), s.end(), s.begin(), ::toupper);
     return s;
 }
+
+
 int main(){
 const int MAX=100;
 Student students[MAX];
@@ -153,13 +177,8 @@ cout << "Enter appropriate number\n";
             }
 
             case 2:{
-            int rollno;
-            cout<<"Enter roll no:";
-            rollno = getValidatedInt();
-            while (rollno < 0) {
-            cout << "Roll number cannot be negative. Enter again: ";
-            rollno = getValidatedInt();
-}
+            int rollno = getValidatedRollNo();
+
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
@@ -175,13 +194,8 @@ cout << "Enter appropriate number\n";
             }
 
             case 3:{
-            int rollno;
-            cout<<"Enter roll no:";
-            rollno = getValidatedInt();
-            while (rollno < 0) {
-            cout << "Roll number cannot be negative. Enter again: ";
-            rollno = getValidatedInt();
-}
+            int rollno = getValidatedRollNo();
+
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
@@ -196,13 +210,8 @@ cout << "Enter appropriate number\n";
             break;
             }
             case 4:{
-            int rollno;
-            cout<<"Enter roll no:";
-            rollno = getValidatedInt();
-            while (rollno < 0) {
-            cout << "Roll number cannot be negative. Enter again: ";
-            rollno = getValidatedInt();
-}
+            int rollno = getValidatedRollNo();
+
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
@@ -217,13 +226,8 @@ cout << "Enter appropriate number\n";
             break;
             }
             case 5:{
-            int rollno;
-            cout<<"Enter roll no:";
-            rollno = getValidatedInt();
-            while (rollno < 0) {
-            cout << "Roll number cannot be negative. Enter again: ";
-            rollno = getValidatedInt();
-}
+            int rollno = getValidatedRollNo();
+
             bool found=false;
             for(int i=0;i<count;++i){
                 if(students[i].getrollno()==rollno){
