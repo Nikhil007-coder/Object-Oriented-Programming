@@ -24,6 +24,22 @@ A simple console-based program that:
 - Input handling
 - Basic arithmetic logic
 
+---
+
+# Product Discount Program (C++)
+
+Menu-driven C++ program demonstrating **friend functions** and **OOP concepts** to calculate product price after discount.
+
+### Concepts Used
+- Classes & Objects  
+- Friend Function  
+- Menu-driven program  
+
+### Run
+```bash
+g++ menu-driven-product-discount.cpp && ./a.out
+```
+
 Purpose: Practice **implementation-style problems** and logic building in C++.
 
 ---
@@ -77,4 +93,5 @@ This project is being improved incrementally and will later include:
 ## 📄 License
 
 This repository is intended for learning and personal use.
+
 
