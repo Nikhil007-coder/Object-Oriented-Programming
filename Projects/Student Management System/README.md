@@ -1,122 +1,56 @@
-##🎓 Student Management System (C++)
+# 🎓 Student Management System (C++)
 
-A console-based Student Management System built using C++ and Object-Oriented Programming (OOP) concepts.
-The project provides a menu-driven interface to manage basic student records and is being developed incrementally for learning purposes.
+A console-based **Student Management System** built using **C++** and **Object-Oriented Programming (OOP)** concepts.  
+The project provides a **menu-driven interface** to manage basic student records and is being developed incrementally for learning purposes.
 
-##⚠️ Status: Work in Progress (Educational Project)
+---
 
------------------------------------------------------------------------------------------------------------------------------------------
+## ⚠️ Status
+**Work in Progress (Educational Project)**
 
-#✨ Features
+---
 
-➕ Add new student records
+## ✨ Features
 
-✏️ Update complete student details
+- ➕ Add new student records  
+- ✏️ Update complete student details  
+- 📊 Update CGPA with validation (0–10)  
+- 🏠 Update hostel information  
+- 🔍 Display student details using roll number  
+- 📋 Menu-driven console interface  
+- ✅ Robust input validation  
 
-📊 Update CGPA with validation (0–10)
+---
 
-🏠 Update hostel information
+## 🛠️ Tech Stack & Concepts
 
-🔍 Display student details using roll number
+- **Language:** C++  
+- **Paradigm:** Object-Oriented Programming  
 
-📋 Menu-driven console interface
+### Core Concepts Used
+- Classes and Objects  
+- Encapsulation  
+- Member Functions  
+- Arrays of Objects  
+- Input Validation using `numeric_limits`  
+- Control Structures (loops, switch-case)  
+- Modular Programming  
 
-✅ Robust input validation
+---
 
----------------------------------------------------------------------------------------------------------------------------------------------
+## 📂 Project Structure
 
-##🛠️ Tech Stack & Concepts
-
-#Language: C++
-
-#Paradigm: Object-Oriented Programming
-
-#Core Concepts Used:
-
-Classes and Objects
-
-Encapsulation
-
-Member Functions
-
-Arrays of Objects
-
-Input Validation using numeric_limits
-
-Control Structures (loops, switch-case)
-
-Modular Programming
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
-##📂 Project Structure
 Student-Management-System/
 │
 ├── student_management.cpp
 ├── README.md
 
------------------------------------------------------------------------------------------------------------------------------------------------
 
-##▶️ How to Run
-#1️⃣ Compile the Program
+---
+
+## ▶️ How to Run
+
+### 1️⃣ Compile the Program
+```bash
 g++ student_management.cpp -o student_management
-
-#2️⃣ Run the Executable
 ./student_management
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
-##📸 Sample Menu
-1 : Add New Student
-2 : Update Details
-3 : Update CGPA
-4 : Update Hostel
-5 : Display Details
-6 : Quit
-
-------------------------------------------------------------------------------------------------------------------------------------------------
-
-##🚧 Current Limitations
-
-Uses a fixed-size array (maximum 100 students)
-
-No persistent storage (data resets after exit)
-
-No duplicate roll number prevention
-
-No delete student functionality
-
-------------------------------------------------------------------------------------------------------------------------------------------------
-
-##🚀 Planned Enhancements
-
-Prevent duplicate roll numbers
-
-Add delete student feature
-
-Implement file handling (save/load records)
-
-Convert array-based storage to vector
-
-Add constructors for better object initialization
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
-##🎯 Learning Objectives
-
-This project was built to:
-
-Strengthen understanding of OOP in C++
-
-Practice input validation
-
-Learn management of collections of objects
-
-Improve code structure and readability
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
-##📜 License
-
-#This project is intended for educational and learning purposes only.
-
