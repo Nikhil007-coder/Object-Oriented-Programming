@@ -68,7 +68,7 @@ No delete student functionality
 
 ---
 
-##🚀 Planned Enhancements
+## 🚀 Planned Enhancements
 
 Prevent duplicate roll numbers
 
@@ -80,7 +80,7 @@ Convert array-based storage to vector
 
 Add constructors for better object initialization
 
-##🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 This project was built to:
 
@@ -92,6 +92,7 @@ Learn management of collections of objects
 
 Improve code structure and readability
 
-##📜 License
+## 📜 License
 
 This project is intended for educational and learning purposes only.
+
