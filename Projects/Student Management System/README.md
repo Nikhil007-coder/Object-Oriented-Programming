@@ -1,11 +1,13 @@
-🎓 Student Management System (C++)
+##🎓 Student Management System (C++)
 
 A console-based Student Management System built using C++ and Object-Oriented Programming (OOP) concepts.
 The project provides a menu-driven interface to manage basic student records and is being developed incrementally for learning purposes.
 
-⚠️ Status: Work in Progress (Educational Project)
+##⚠️ Status: Work in Progress (Educational Project)
 
-✨ Features
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+#✨ Features
 
 ➕ Add new student records
 
@@ -21,13 +23,15 @@ The project provides a menu-driven interface to manage basic student records and
 
 ✅ Robust input validation
 
-🛠️ Tech Stack & Concepts
+---------------------------------------------------------------------------------------------------------------------------------------------
 
-Language: C++
+##🛠️ Tech Stack & Concepts
 
-Paradigm: Object-Oriented Programming
+#Language: C++
 
-Core Concepts Used:
+#Paradigm: Object-Oriented Programming
+
+#Core Concepts Used:
 
 Classes and Objects
 
@@ -43,20 +47,26 @@ Control Structures (loops, switch-case)
 
 Modular Programming
 
-📂 Project Structure
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+##📂 Project Structure
 Student-Management-System/
 │
 ├── student_management.cpp
 ├── README.md
 
-▶️ How to Run
-1️⃣ Compile the Program
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+##▶️ How to Run
+#1️⃣ Compile the Program
 g++ student_management.cpp -o student_management
 
-2️⃣ Run the Executable
+#2️⃣ Run the Executable
 ./student_management
 
-📸 Sample Menu
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+##📸 Sample Menu
 1 : Add New Student
 2 : Update Details
 3 : Update CGPA
@@ -64,7 +74,9 @@ g++ student_management.cpp -o student_management
 5 : Display Details
 6 : Quit
 
-🚧 Current Limitations
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+##🚧 Current Limitations
 
 Uses a fixed-size array (maximum 100 students)
 
@@ -74,7 +86,9 @@ No duplicate roll number prevention
 
 No delete student functionality
 
-🚀 Planned Enhancements
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+##🚀 Planned Enhancements
 
 Prevent duplicate roll numbers
 
@@ -86,7 +100,9 @@ Convert array-based storage to vector
 
 Add constructors for better object initialization
 
-🎯 Learning Objectives
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+##🎯 Learning Objectives
 
 This project was built to:
 
@@ -98,6 +114,9 @@ Learn management of collections of objects
 
 Improve code structure and readability
 
-📜 License
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
-This project is intended for educational and learning purposes only.
+##📜 License
+
+#This project is intended for educational and learning purposes only.
+
