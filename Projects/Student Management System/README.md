@@ -58,41 +58,42 @@ g++ student_management.cpp -o student_management
 ---
 ## 🚧 Current Limitations
 
-Uses a fixed-size array (maximum 100 students)
+- Uses a fixed-size array (maximum 100 students)
 
-No persistent storage (data resets after exit)
+- No persistent storage (data resets after exit)
 
-No duplicate roll number prevention
+- No duplicate roll number prevention
 
-No delete student functionality
+- No delete student functionality
 
 ---
 
 ## 🚀 Planned Enhancements
 
-Prevent duplicate roll numbers
+- Prevent duplicate roll numbers
 
-Add delete student feature
+- Add delete student feature
 
-Implement file handling (save/load records)
+- Implement file handling (save/load records)
 
-Convert array-based storage to vector
+- Convert array-based storage to vector
 
 Add constructors for better object initialization
 
 ## 🎯 Learning Objectives
 
-This project was built to:
+### This project was built to:
 
-Strengthen understanding of OOP in C++
+- Strengthen understanding of OOP in C++
 
-Practice input validation
+- Practice input validation
 
-Learn management of collections of objects
+- Learn management of collections of objects
 
-Improve code structure and readability
+- Improve code structure and readability
 
 ## 📜 License
 
-This project is intended for educational and learning purposes only.
+### This project is intended for educational and learning purposes only.
+
 
