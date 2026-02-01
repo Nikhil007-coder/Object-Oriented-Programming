@@ -54,3 +54,44 @@ Student-Management-System/
 ```bash
 g++ student_management.cpp -o student_management
 ./student_management
+```
+---
+## 🚧 Current Limitations
+
+Uses a fixed-size array (maximum 100 students)
+
+No persistent storage (data resets after exit)
+
+No duplicate roll number prevention
+
+No delete student functionality
+
+---
+
+##🚀 Planned Enhancements
+
+Prevent duplicate roll numbers
+
+Add delete student feature
+
+Implement file handling (save/load records)
+
+Convert array-based storage to vector
+
+Add constructors for better object initialization
+
+##🎯 Learning Objectives
+
+This project was built to:
+
+Strengthen understanding of OOP in C++
+
+Practice input validation
+
+Learn management of collections of objects
+
+Improve code structure and readability
+
+##📜 License
+
+This project is intended for educational and learning purposes only.
