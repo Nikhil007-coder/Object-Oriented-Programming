@@ -7,34 +7,44 @@
 //     The project is under progressive development.
 // */
 
-#include<iostream>
-#include<limits>
-#include<string>
-#include<algorithm>
+#include <iostream>
+#include <limits>
+#include <string>
+#include <algorithm>
+
 using namespace std;
+
+// Function declarations
 int getValidatedInt();
 float getValidatedFloat();
 int getValidatedRollNo();
 string uppercase(string s);
-class Student{
-    private:
+
+// Student class
+class Student {
+private:
     string name;
     int rollno;
     string degree;
     string hostel;
     float cgpa;
-    public:
+
+public:
     void addDetails();
     void updateDetails();
     void updateCGPA();
-    void updateHostel(); 
+    void updateHostel();
     void display();
     int getrollno();
 };
-int Student:: getrollno(){
+
+// Getter
+int Student::getrollno() {
     return rollno;
 }
-void Student::addDetails(){
+
+// Add student details
+void Student::addDetails() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Enter name: ";
@@ -51,7 +61,7 @@ void Student::addDetails(){
     getline(cin, hostel);
 
     cout << "Enter CGPA: ";
-    cgpa=getValidatedFloat();
+    cgpa = getValidatedFloat();
 
     while (cgpa < 0 || cgpa > 10) {
         cout << "Invalid CGPA. Enter again: ";
@@ -59,6 +69,7 @@ void Student::addDetails(){
     }
 }
 
+// Display details
 void Student::display() {
     cout << "\nStudent Details:\n";
     cout << "Name: " << uppercase(name) << "\n";
@@ -67,6 +78,8 @@ void Student::display() {
     cout << "Hostel: " << uppercase(hostel) << "\n";
     cout << "CGPA: " << cgpa << "\n";
 }
+
+// Update all details
 void Student::updateDetails() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -80,7 +93,7 @@ void Student::updateDetails() {
     getline(cin, hostel);
 
     cout << "Enter new CGPA: ";
-    cgpa=getValidatedFloat();
+    cgpa = getValidatedFloat();
 
     while (cgpa < 0 || cgpa > 10) {
         cout << "Invalid CGPA. Enter again: ";
@@ -90,33 +103,40 @@ void Student::updateDetails() {
     cout << "Details updated successfully!\n";
 }
 
-void Student::updateCGPA(){
-    cout<<"Enter new CGPA:";
-    cgpa=getValidatedFloat();
+// Update CGPA only
+void Student::updateCGPA() {
+    cout << "Enter new CGPA: ";
+    cgpa = getValidatedFloat();
 
     while (cgpa < 0 || cgpa > 10) {
-    cout << "Invalid CGPA. Enter again: ";
-    cgpa = getValidatedFloat();
+        cout << "Invalid CGPA. Enter again: ";
+        cgpa = getValidatedFloat();
     }
 }
-void Student::updateHostel(){
+
+// Update hostel only
+void Student::updateHostel() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Enter new hostel: ";
     getline(cin, hostel);
 }
-int getValidatedInt(){
+
+// Integer validation
+int getValidatedInt() {
     int value;
-    while(true){
+    while (true) {
         cin >> value;
-        if (cin.fail()){
+        if (cin.fail()) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<("Invalid Input.Enter an Integer:");
-        }else{
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid Input. Enter an Integer: ";
+        } else {
             return value;
         }
     }
 }
+
+// Roll number validation
 int getValidatedRollNo() {
     int rollno;
     cout << "Enter roll no: ";
@@ -129,127 +149,136 @@ int getValidatedRollNo() {
 
     return rollno;
 }
-float getValidatedFloat(){
+
+// Float validation
+float getValidatedFloat() {
     float value;
-    while(true){
+    while (true) {
         cin >> value;
-        if (cin.fail()){
+        if (cin.fail()) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<("Invalid Input.Enter a Integer/Decimal No:");
-        }else{
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid Input. Enter a number: ";
+        } else {
             return value;
         }
     }
 }
+
+// Convert string to uppercase
 string uppercase(string s) {
     transform(s.begin(), s.end(), s.begin(), ::toupper);
     return s;
 }
 
+// Main function
+int main() {
+    const int MAX = 100;
+    Student students[MAX];
+    int count = 0;
+    int option;
 
-int main(){
-const int MAX=100;
-Student students[MAX];
-int option;
-int count=0;
-do{
-cout << "\n\nYou can do the following:\n";
-cout << "Enter appropriate number\n";
-        cout<<"\n1 : Add New Student.";
-        cout<<"\n2 : Update Details.";
-        cout<<"\n3 : Update CGPA.";
-        cout<<"\n4 : Update Hostel.";
-        cout<<"\n5 : Display Details.";
-        cout<<"\n6 : Quit.";
-        cout<<"\nEnter Your Option.";
-        option=getValidatedInt();
-        switch(option){
-            case 1:{
-            if(count<100){
+    do {
+        cout << "\n\nYou can do the following:\n";
+        cout << "Enter appropriate number\n";
+        cout << "\n1 : Add New Student";
+        cout << "\n2 : Update Details";
+        cout << "\n3 : Update CGPA";
+        cout << "\n4 : Update Hostel";
+        cout << "\n5 : Display Details";
+        cout << "\n6 : Quit";
+        cout << "\nEnter Your Option: ";
+
+        option = getValidatedInt();
+
+        switch (option) {
+
+        case 1:
+            if (count < MAX) {
                 students[count].addDetails();
                 count++;
-            }
-            else{
-                cout<<"Students limit reached...";
+            } else {
+                cout << "Student limit reached...";
             }
             break;
-            }
 
-            case 2:{
+        case 2: {
             int rollno = getValidatedRollNo();
+            bool found = false;
 
-            bool found=false;
-            for(int i=0;i<count;++i){
-                if(students[i].getrollno()==rollno){
+            for (int i = 0; i < count; i++) {
+                if (students[i].getrollno() == rollno) {
                     students[i].updateDetails();
-                    found=true;
+                    found = true;
                     break;
                 }
-                }
-            if(!found){
-                cout<<"Student not found...";
             }
+
+            if (!found)
+                cout << "Student not found...";
             break;
-            }
-
-            case 3:{
-            int rollno = getValidatedRollNo();
-
-            bool found=false;
-            for(int i=0;i<count;++i){
-                if(students[i].getrollno()==rollno){
-                    students[i].updateCGPA();
-                    found=true;
-                    break;
-                }
-                }
-            if(!found){
-                cout<<"Student not found...";
-            }
-            break;
-            }
-            case 4:{
-            int rollno = getValidatedRollNo();
-
-            bool found=false;
-            for(int i=0;i<count;++i){
-                if(students[i].getrollno()==rollno){
-                    students[i].updateHostel();
-                    found=true;
-                    break;
-                }
-                }
-            if(!found){
-                cout<<"Student not found...";
-            }
-            break;
-            }
-            case 5:{
-            int rollno = getValidatedRollNo();
-
-            bool found=false;
-            for(int i=0;i<count;++i){
-                if(students[i].getrollno()==rollno){
-                    students[i].display();
-                    found=true;
-                    break;
-                }
-                }
-            if(!found){
-                cout<<"Student not found...";
-            }
-            break;
-            }
-
-            case 6:
-                cout<<"Exiting program...";
-            
-            break;
-            default: cout<<"Input Error ,Try Again....";
-
         }
-}
-while(option!=6);
+
+        case 3: {
+            int rollno = getValidatedRollNo();
+            bool found = false;
+
+            for (int i = 0; i < count; i++) {
+                if (students[i].getrollno() == rollno) {
+                    students[i].updateCGPA();
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+                cout << "Student not found...";
+            break;
+        }
+
+        case 4: {
+            int rollno = getValidatedRollNo();
+            bool found = false;
+
+            for (int i = 0; i < count; i++) {
+                if (students[i].getrollno() == rollno) {
+                    students[i].updateHostel();
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+                cout << "Student not found...";
+            break;
+        }
+
+        case 5: {
+            int rollno = getValidatedRollNo();
+            bool found = false;
+
+            for (int i = 0; i < count; i++) {
+                if (students[i].getrollno() == rollno) {
+                    students[i].display();
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+                cout << "Student not found...";
+            break;
+        }
+
+        case 6:
+            cout << "Exiting program...";
+            break;
+
+        default:
+            cout << "Invalid option. Try again.";
+        }
+
+    } while (option != 6);
+
     return 0;
 }
