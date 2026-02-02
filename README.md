@@ -62,7 +62,7 @@ A console-based Student Management System built using **C++ and OOP concepts**.
 - Encapsulation
 - Member functions
 - Arrays of objects
-- Input validation using `numeric_limits`
+- Input validation of Roll No. and CGPA using `numeric_limits`
 
 🚧 **Status:** Incomplete – Work in Progress  
 This project is being improved incrementally and will later include:
