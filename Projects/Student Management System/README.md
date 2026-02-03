@@ -18,7 +18,8 @@ The project provides a **menu-driven interface** to manage basic student records
 - 🏠 Update hostel information  
 - 🔍 Display student details using roll number  
 - 📋 Menu-driven console interface  
-- ✅ Robust input validation  
+- ✅ Robust input validation
+- ✅ Prevent duplicate roll numbers
 
 ---
 
@@ -62,15 +63,11 @@ g++ student_management.cpp -o student_management
 
 - No persistent storage (data resets after exit)
 
-- No duplicate roll number prevention
-
 - No delete student functionality
 
 ---
 
 ## 🚀 Planned Enhancements
-
-- Prevent duplicate roll numbers
 
 - Add delete student feature
 
@@ -95,5 +92,6 @@ Add constructors for better object initialization
 ## 📜 License
 
 ### This project is intended for educational and learning purposes only.
+
 
 
