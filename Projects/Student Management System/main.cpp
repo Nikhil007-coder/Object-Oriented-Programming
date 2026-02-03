@@ -30,7 +30,7 @@ private:
     float cgpa;
 
 public:
-    void addDetails();
+    void addDetails(Student students[],int count);
     void updateDetails();
     void updateCGPA();
     void updateHostel();
@@ -44,13 +44,20 @@ int Student::getrollno() {
 }
 
 // Add student details
-void Student::addDetails() {
+void Student::addDetails(Student students[], int count)
+{
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Enter name: ";
     getline(cin, name);
 
     rollno = getValidatedRollNo();
+    for(int i=count-1;i>=0;i--){
+        if(students[i].getrollno()==rollno){
+            cout<<"Roll No. Already Exists"<<endl;
+            rollno = getValidatedRollNo();
+        }
+    }
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -69,6 +76,7 @@ void Student::addDetails() {
     }
 }
 
+
 // Display details
 void Student::display() {
     cout << "\nStudent Details:\n";
@@ -78,6 +86,7 @@ void Student::display() {
     cout << "Hostel: " << uppercase(hostel) << "\n";
     cout << "CGPA: " << cgpa << "\n";
 }
+
 
 // Update all details
 void Student::updateDetails() {
@@ -195,7 +204,7 @@ int main() {
 
         case 1:
             if (count < MAX) {
-                students[count].addDetails();
+                students[count].addDetails(students,count);
                 count++;
             } else {
                 cout << "Student limit reached...";
