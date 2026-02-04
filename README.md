@@ -56,6 +56,7 @@ A console-based Student Management System built using **C++ and OOP concepts**.
 - Update hostel information
 - Display student details using roll number
 - Menu-driven interface
+- Prevent Duplicate roll no
 
 **Concepts used:**
 - Classes and Objects
@@ -91,6 +92,7 @@ This project is being improved incrementally and will later include:
 ## 📄 License
 
 This repository is intended for learning and personal use.
+
 
 
 
