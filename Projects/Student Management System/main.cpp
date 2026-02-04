@@ -34,8 +34,8 @@ public:
     void updateDetails();
     void updateCGPA();
     void updateHostel();
-    void display();
-    int getrollno();
+    void const display();
+    int const getrollno();
 };
 
 // Getter
