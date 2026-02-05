@@ -35,7 +35,7 @@ public:
     void updateCGPA();
     void updateHostel();
     void const display();
-    int const getrollno();
+    int inline const getrollno();
 };
 
 // Getter
